@@ -49,7 +49,8 @@ header{
 .header{
     /*border:1px solid black;*/
     height:60px;
-    width:80%;
+    width:100%;
+    min-width: 500px;
     margin: 0 auto;
     display:flex;
     flex-wrap:nowrap;
@@ -63,15 +64,13 @@ header{
 }
 .header .index{
    align-self: center;
-    margin-top: 5px;
 }
 .header .last{
     align-self: flex-end;
-    margin-bottom: 5px;
-    font-size: 12px;
+    font-size: 16px;
 }
 .header a:nth-child(5){
-    margin-left: 10%;
+    margin-left: 0;
 }
 .logo{
     width: 120px;
@@ -102,44 +101,61 @@ section:nth-child(3){
 section:nth-child(4){
     background: #009a70 url(../img/bg-3_153a003.jpg) repeat center top;
 }
-.bdyq{
-    width: 501px;
-    height: 158px;
-    background: url(../img/launch_deea86c.png);
-    position:absolute;
-    left: 10%;
-    top: 110px;
-}
-.fly{
-    width: 119px;
-    height: 78px;
-    background: url(../img/flight_ade8ee2.png);
-    position:absolute;
-    left: 37%;
-    top: 80px;
-    animation: fly 2s infinite;
-}
-@keyframes fly {
-    0%{
-        top:70px;
-    }
-    50%{
-        top:80px;
-    }
-    100%{
-        top:70px;
-    }
-}
-.boat{
-    width: 242px;
-    height: 228px;
-    background: url(../img/ship_1ad6734.png);
-    position:absolute;
-    left: 10%;
-    top: 330px;
-    z-index: 1;
+
+
+/*.cloud{*/
+    /*width: 200%;*/
+    /*height:50%;*/
+    /*position: absolute;*/
+    /*top:0;left:0;*/
+    /*!*animation: yun 1s linear infinite;*!*/
+
+/*}*/
+.yun{
+    /*float: left;*/
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    top:-200px;left:0;
+    background: url(../img/cloud_2_a186193.png) repeat;
+    background-size: cover;
+    animation: yun 20s linear infinite;
+ }
+.yun2{
+    /*float: left;*/
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top:200px;left:0;
+    background: url(../img/cloud_3_5ee0340.png) repeat;
+    background-size: cover;
+    animation: yun 20s linear infinite;
 
 }
+@keyframes yun {
+    0%{
+        background-position-x: -100%;
+        /*transform:translate(0,0);*/
+    }
+    50%{
+        background-position-x: 0;
+        /*transform:translate(0,0);*/
+    }
+    100%{
+        background-position-x: 100%;
+        /*transform:translate(0,0);*/
+    }
+}
+.input{
+    width: 340px;
+    height:300px;
+    background: url("../img/input.png") no-repeat;
+    position:absolute;
+    right: 30%;
+    top: 120px;
+    z-index:3;
+}
+
 .sea{
     width:100%;
     height: 126px;
@@ -153,7 +169,7 @@ section:nth-child(4){
     background: url(../img/hill_1_0d79217.png);
     position:absolute;
     bottom: 2px;
-    left:-13%;
+    left:0;
 }
 .ice2{
     width: 63px;
@@ -172,21 +188,13 @@ section:nth-child(4){
     left:83%;
 }
 
-.head{
-    width: 444px;
-    height: 427px;
-    background: url(../img/brain_36a156f.png);
-    position:absolute;
-    top: 120px;
-    right:10%;
-}
 .lx{
     width: 66px;
     height: 126px;
     background: url(../img/h_lingxian_221f2d8.png) no-repeat;
     position:absolute;
     top: 200px;
-    left:17%;
+    left:20%;
     animation:lx 1s infinite;
     transform: rotate(-15deg);
     z-index: 3;
@@ -210,7 +218,7 @@ section:nth-child(4){
     height:118px;
     position:absolute;
     top: 200px;
-    left:23%;
+    left:30%;
     /*border: 1px solid #ccc;*/
     font-family: 'Microsoft Yahei';
     color: #fff;
@@ -270,14 +278,6 @@ section:nth-child(4){
     width: 44px;
     height: 44px;
 }
-.headfs{
-    width: 444px;
-    height: 330px;
-    background: url(../img/allside_e8abd12.png);
-    position:absolute;
-    right:10%;
-    top:200px;
-}
 .qm{
     background: url(../img/h_quanmian_8f813d2.png) no-repeat;
 }
@@ -323,14 +323,7 @@ section:nth-child(4){
     height: 138px;
     background: transparent url(../img/bg-3-head_b8a3f7f.png);
 }
-.biao{
-    width: 603px;
-    height: 361px;
-    background: url(../img/stat_8934528.png);
-    position:absolute;
-    right:10%;
-    top:200px;
-}
+
 .zy{
     background: url(../img/h_zhuanye_256a94d.png) no-repeat;
 }
@@ -341,6 +334,17 @@ section:nth-child(4){
     width: 275px;
     height: 245px;
     background: url(../img/bubble_3b0f897.png);
+}
+section .l{
+    margin-left: -30px;
+    transition: margin .5s linear,opacity 1s ease;
+    opacity: 0;
+}
+section .r{
+    margin-right: -30px;
+    transition: margin .5s linear,opacity 1s ease;
+    opacity: 0;
+
 }
 .foot{
     width: 250px;
@@ -366,7 +370,6 @@ section:nth-child(4){
     margin: 0 auto;
     animation: bottom 1s infinite;
 }
-
 @keyframes bottom {
     0%{
         bottom: 50px;
@@ -397,4 +400,242 @@ section:nth-child(4){
 }
 .lunbo li:nth-child(1){
     background: #333;
+}
+.max{
+    display: none;
+}
+.min{
+    position: relative;
+}
+.min .menuOption{
+    width: 30px;
+    height:40px;
+    position: relative;
+    margin-left:70%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+/*.min .menuOption:hover .menuTl{*/
+    /*transform: translate(0 45) rotateZ(45deg);*/
+/*}*/
+/*.min .menuOption:hover .menuTl{*/
+    /*transform: translate(0 45) rotateZ(45deg);*/
+/*}*/
+.min .menuOption .menuTl{
+    content: "";
+    width: 100%;
+    height:2px;
+    position: absolute;
+    top:10px;
+    left:0;
+    background: #fff;
+    transition: transform .5s ease;
+}
+.min .menuOption .menuBl{
+    content: "";
+    width: 100%;
+    height:2px;
+    position: absolute;
+    top:20px;
+    left:0;
+    background: #fff;
+    transition: transform .5s ease;
+}
+.min .scene{
+    position: absolute;
+    top:60px;left:0;
+    width:100%;
+    height:40px;
+    background: red;
+    perspective: 500px;
+}
+.min .menu{
+    position: absolute;
+    top:60px;left:0;
+    width:100%;
+    height:40px;
+    /*background: red;*/
+    transform-style: preserve-3d;
+}
+.min .menu a{
+    display: block;
+    width: 100%;height:100%;
+    text-align: center;
+    line-height: 40px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    transform-origin: top;
+    opacity: 0;
+    transform: rotateX(90deg);
+}
+/*.min .menu a:nth-child(1){*/
+    /*animation: menu .3s linear 0s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(2){*/
+    /*animation: menu .3s linear 0.2s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(3){*/
+    /*animation: menu .3s linear 0.4s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(4){*/
+    /*animation: menu .3s linear 0.6s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(5){*/
+    /*animation: menu .3s linear 0.8s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(6){*/
+    /*animation: menu .3s linear 1s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(7){*/
+    /*animation: menu .3s linear 1.2s forwards;*/
+/*}*/
+
+/*.min .menu a:nth-child(1){*/
+    /*animation: menu1 .3s linear 0s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(2){*/
+    /*animation: menu1 .3s linear 0.2s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(3){*/
+    /*animation: menu1 .3s linear 0.4s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(4){*/
+    /*animation: menu1 .3s linear 0.6s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(5){*/
+    /*animation: menu1 .3s linear 0.8s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(6){*/
+    /*animation: menu1 .3s linear 1s forwards;*/
+/*}*/
+/*.min .menu a:nth-child(7){*/
+    /*animation: menu1.3s linear 1.2s forwards;*/
+/*}*/
+@keyframes menu1 {
+    0%{
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+@keyframes menu2 {
+    0%{
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+    100%{
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+}
+@media screen and (min-width:1000px){
+    .max{
+        display: flex;
+    }
+    .min{
+        display: none;
+    }
+    .header{
+        width:80%;
+    }
+    .header a:nth-child(5){
+        margin-left: 10%;
+    }
+    .header .last{
+        align-self: flex-end;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+    .header .index{
+        align-self: center;
+        margin-top: 5px;
+    }
+    .bdyq{
+        width: 501px;
+        height: 158px;
+        background: url(../img/launch_deea86c.png);
+        position:absolute;
+        left: 8%;
+        top: 110px;
+        z-index:2;
+    }
+    .fly{
+        width: 119px;
+        height: 78px;
+        background: url(../img/flight_ade8ee2.png);
+        position:absolute;
+        left: 35%;
+        top: 80px;
+        animation: fly 2s infinite;
+    }
+    @keyframes fly {
+        0%{
+            top:70px;
+        }
+        50%{
+            top:80px;
+        }
+        100%{
+            top:70px;
+        }
+    }
+    .boat{
+        width: 242px;
+        height: 228px;
+        background: url(../img/ship_1ad6734.png);
+        position:absolute;
+        left: 22%;
+        bottom: 14%;
+        z-index: 1;
+        transform: translate(-30px,0);
+        /*渐进式增强  优雅降级*/
+        /*animation:boat 2s ease forwards;*/
+        /*-moz-animation:boat 2s ease forwards;*/
+        /*-webkit-animation:boat 2s ease forwards;*/
+    }
+    /*@keyframes boat {*/
+        /*0%{*/
+            /*transform:translate(-30px,0)*/
+        /*}*/
+        /*100%{*/
+            /*transform:translate(0px,0)*/
+        /*}*/
+    /*}*/
+    .input{
+        right: 13%;
+    }
+    .head{
+        width: 444px;
+        height: 427px;
+        background: url(../img/brain_36a156f.png);
+        position:absolute;
+        top: 120px;
+        right:10%;
+    }
+    .headfs{
+        width: 444px;
+        height: 330px;
+        background: url(../img/allside_e8abd12.png);
+        position:absolute;
+        right:10%;
+        top:200px;
+    }
+    .biao{
+        width: 603px;
+        height: 361px;
+        background: url(../img/stat_8934528.png);
+        position:absolute;
+        right:10%;
+        bottom:15%;
+    }
+    .lx{
+        left:10%
+    }
+    .text{
+        left:17%
+    }
+
 }

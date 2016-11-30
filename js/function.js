@@ -196,7 +196,7 @@ function mouseWheel(obj,up,down){
 		// firfox -moz-
 	}
 	function scrollFn(e){
-		var f=e.wheelDelta||e.detail
+		var f=e.wheelDelta||e.detail;
 		if(f==-3||f==120){
 			if(up){
 				up()
