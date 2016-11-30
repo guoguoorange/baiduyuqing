@@ -18,9 +18,12 @@ $(function(){
 
             num=$("section").length-1;
 
-        }else if(num==$("section").length-1){
+        }
+        if(num==$("section").length-1){
 
             $(".btn").hide();
+        }else{
+            $(".btn").show();
         }
 
         flag=false;
@@ -34,6 +37,12 @@ $(function(){
         num--;
         if(num==-1){
             num=0;
+        }
+        if(num==$("section").length-1){
+
+            $(".btn").hide();
+        }else{
+            $(".btn").show();
         }
         flag=false;
         $("#fullpage").css("marginTop",-num*ch);
