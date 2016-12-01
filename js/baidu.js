@@ -101,25 +101,26 @@ $(function(){
     mouseWheel($("#fullpage")[0],up,down);
     $(".lunbo li").click(function(){
         var index=$(this).index();
-        for(var i=0;i<$("section").length-1;i++){
-            if(index>i){
-                num=index-1;
-                up();
-                console.log(num)
-                /*为什么这个地方会输出2个num呢？*/
-            }else if(index<i){
-                num=index-1;
-                down();
-                console.log(num)
-            }else{
-                return
-            }
-        }
+        // for(var i=0;i<$("section").length-1;i++){
+        //     if(index>i){
+        //         num=index-1;
+        //         up();
+        //         console.log(num)
+        //         /*为什么这个地方会输出2个num呢？*/
+        //     }else if(index<i){
+        //         num=index-1;
+        //         down();
+        //         console.log(num)
+        //     }else{
+        //         return
+        //     }
+        // }
 
-        // number(index)
-        //
-        // $("#fullpage").css("marginTop",-index*ch);
-        // $(".lunbo li").css("background","none").eq(index).css("background","#333");
+        number(index)
+        num=index;
+
+        $("#fullpage").css("marginTop",-num*ch);
+        $(".lunbo li").css("background","none").eq(index).css("background","#333");
 
     })
     $(".btn").click(up);
