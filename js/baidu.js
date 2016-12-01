@@ -24,10 +24,11 @@ $(function(){
             return;
         }
         num++;
+        // console.log(num)
         if(num==$("section").length){
 
             num=$("section").length-1;
-
+            // console.log(num)
         }
         number(num);
         flag=false;
@@ -35,9 +36,13 @@ $(function(){
         $(".lunbo li").css("background","none").eq(num).css("background","#333");
     }
     function down(){
+
         if(!flag){
+            // console.log("no")
             return;
+
         }
+        // console.log("up")
         num--;
         if(num==-1){
             num=0;
@@ -52,10 +57,10 @@ $(function(){
         if(num==$("section").length-1){
             $(".btn").hide();
         }else{
-            for(var i=0;i<$(".l").length-1;i++){
-                var ll=$(".l")[i].left;
-                $(".l")[i].left=ll+"20px";
-            }
+            // for(var i=0;i<$(".l").length-1;i++){
+            //     var ll=$(".l")[i].left;
+            //     $(".l")[i].left=ll+"20px";
+            // }
             $(".btn").show();
         }
         // console.log(num)
@@ -140,7 +145,7 @@ $(function(){
 
             /*菜单*/
             $(".menu a").each(function(index,obj){
-                console.log(index,obj)
+                // console.log(index,obj)
                 $(obj).css({
                     opacity:0,
                     transform:"rotateX(90deg)",
@@ -159,15 +164,16 @@ $(function(){
             })
             /*菜单*/
             $(".menu a").each(function(index,obj){
-                console.log(index,obj)
+                // console.log(index,obj)
                 $(obj).css({
                     opacity:1,
                     transform:"rotateX(0deg)",
                     animation:"menu2 .3s linear "+(1.2-0.2*index)+"s forwards"
                 })
-                setTimeout(function(){
-                    $(".menu").css("display","none");
-                })
+
+            })
+            setTimeout(function(){
+                // $(".menu").css("display","none");
             })
 
             flag2=true;
